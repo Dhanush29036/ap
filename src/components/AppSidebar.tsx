@@ -11,7 +11,7 @@ const AppSidebar: React.FC = () => {
     { icon: <CreditCard size={18} />, label: "Payments", path: "/payments" },
     { icon: <Settings size={18} />, label: "Settings", path: "/settings" },
   ];
-
+  
   const handleLogout = () => {
     navigate("/login");
   };
@@ -21,8 +21,8 @@ const AppSidebar: React.FC = () => {
       <div className="py-2 flex items-center">
         <div className="w-12 h-12 rounded-full bg-gray-200 mr-3"></div>
         <div>
-          <h3 className="font-semibold">Jane Doe</h3>
-          <p className="text-sm text-gray-500">+1 234 567 8900</p>
+          <h3 className="font-semibold">K Apeksha reddy</h3>
+          <p className="text-sm text-gray-500">+91 8499846309</p>
         </div>
       </div>
 
@@ -52,3 +52,4 @@ const AppSidebar: React.FC = () => {
 };
 
 export default AppSidebar;
+
