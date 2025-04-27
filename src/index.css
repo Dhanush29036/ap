@@ -1,0 +1,75 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 288 30% 99%;
+    --foreground: 280 5% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 280 5% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 280 5% 20%;
+
+    --primary: 260 80% 74%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 100% 94%;
+    --secondary-foreground: 340 50% 30%;
+
+    --muted: 270 20% 96%;
+    --muted-foreground: 280 5% 45%;
+
+    --accent: 270 70% 95%;
+    --accent-foreground: 270 50% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 20% 90%;
+    --input: 270 20% 90%;
+    --ring: 260 80% 74%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .map-container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .ride-option {
+    @apply relative flex items-center p-4 border rounded-xl transition-all;
+  }
+  
+  .ride-option.selected {
+    @apply border-primary bg-primary bg-opacity-5;
+  }
+  
+  .ride-option-icon {
+    @apply flex items-center justify-center w-12 h-12 rounded-full mr-3;
+  }
+}
