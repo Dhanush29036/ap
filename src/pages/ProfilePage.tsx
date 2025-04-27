@@ -4,9 +4,9 @@ import { Card } from "@/components/ui/card";
 const ProfilePage = () => {
   // State to manage the profile information
   const [isEditing, setIsEditing] = useState(false);
-  const [name, setName] = useState('Tejas');
+  const [name, setName] = useState('K Apeksha reddy');
   const [phone, setPhone] = useState('+91 9440839940');
-  const [email, setEmail] = useState('Tejas143@gmail.com');
+  const [email, setEmail] = useState('apekshareddy14@gmail.com');
   const [joinDate, setJoinDate] = useState('January 2024');
 
   const handleEditToggle = () => {
