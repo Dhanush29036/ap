@@ -22,7 +22,7 @@ const AppSidebar: React.FC = () => {
         <div className="w-12 h-12 rounded-full bg-gray-200 mr-3"></div>
         <div>
           <h3 className="font-semibold">K Apeksha reddy</h3>
-          <p className="text-sm text-gray-500">+91 8499846309</p>
+          <p className="text-sm text-gray-500">+91 9014131182</p>
         </div>
       </div>
 
