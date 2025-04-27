@@ -6,7 +6,7 @@ import RideOptions from '@/components/RideOptions';
 import RideConfirmation from '@/components/RideConfirmation';
 import AppHeader from '@/components/AppHeader';
 import AppSidebar from '@/components/AppSidebar';
-import ProfileMenu from '@/components/ProfileMenu'; // You were using ProfileMenu but forgot to import
+import ProfileMenu from '@/components/ProfileMenu';
 import { Button } from '@/components/ui/button';
 
 const HomePage: React.FC = () => {
@@ -35,27 +35,40 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="h-screen bg-white relative pt-16"> {/* Added padding top to prevent content overlap */}
+    <div className="h-screen bg-white relative flex flex-col pt-16 overflow-hidden">
+      {/* Sidebar */}
       <AppSidebar />
-      <div className="flex-1">
+
+      {/* Main Section */}
+      <div className="flex flex-col flex-1 relative overflow-hidden">
+        {/* Header */}
         <AppHeader onProfileClick={() => setShowProfileMenu(true)} />
-        
-        <div className="flex-1 relative">
-          <MapComponent />
+
+        {/* Location Search Bar */}
+        <div className="relative z-30 p-4 bg-white shadow-md rounded-md w-11/12 max-w-2xl mx-auto mt-4">
           <LocationSearch onLocationSelect={handleLocationSelect} />
+        </div>
+
+        {/* Map Section */}
+        <div className="flex-1 relative z-10 mt-4">
+          <MapComponent />
         </div>
 
         {/* Ride Options Popup */}
         {showRideOptions && (
-          <RideOptions onSelectRide={handleRideSelect} />
+          <div className="absolute inset-0 flex items-center justify-center z-40">
+            <RideOptions onSelectRide={handleRideSelect} />
+          </div>
         )}
 
         {/* Ride Confirmation Popup */}
         {showRideConfirmation && (
-          <RideConfirmation 
-            rideType={selectedRide} 
-            onComplete={handleRideComplete}
-          />
+          <div className="absolute inset-0 flex items-center justify-center z-50">
+            <RideConfirmation 
+              rideType={selectedRide} 
+              onComplete={handleRideComplete}
+            />
+          </div>
         )}
 
         {/* Profile Menu */}
@@ -66,9 +79,14 @@ const HomePage: React.FC = () => {
           />
         )}
 
-        {/* Booking Option Button */}
-        <div className="flex justify-center mt-4">
-          <Button onClick={handleLocationSelect}>Book Now</Button>
+        {/* Book Bike Button */}
+        <div className="absolute bottom-6 w-full flex justify-center z-50">
+          <Button
+            onClick={handleLocationSelect}
+            className="px-6 py-3 text-lg rounded-full bg-blue-600 hover:bg-blue-700"
+          >
+            Book Bike
+          </Button>
         </div>
       </div>
     </div>
@@ -76,3 +94,4 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
+
